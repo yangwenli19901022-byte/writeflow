@@ -2,8 +2,8 @@ import { NextRequest } from "next/server";
 import { buildPrompt } from "@/lib/prompts";
 import { Genre, Requirements } from "@/types";
 
-const KIMI_API_URL = "https://api.moonshot.cn/v1/chat/completions";
-const DEFAULT_MODEL = "moonshot-v1-8k";
+const KIMI_API_URL = "https://api.kimi.com/coding/v1/chat/completions";
+const DEFAULT_MODEL = "kimi-for-coding";
 
 interface ApiErrorResponse {
   error: {
@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
           {
             role: "system",
             content:
-              "你是一位专业的中文写作助手，擅长根据不同体裁要求将原始素材改写成高质量的文案。请严格按照用户要求的格式输出。",
+              "你是一位专业的中文写作助手，擅长根据不同体裁要求将原始素材改写成高质量的文案。请严格按照用户要求的格式输出，不要输出与格式无关的解释性文字。",
           },
           {
             role: "user",

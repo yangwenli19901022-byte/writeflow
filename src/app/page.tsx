@@ -193,7 +193,7 @@ export default function Home() {
           try {
             await createGeneration({
               draft_id: selectedDraftId,
-              model: "moonshot-v1-8k",
+              model: "kimi-for-coding",
               prompt_version: "1.0",
               output: generatedOutput,
             });

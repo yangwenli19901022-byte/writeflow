@@ -41,12 +41,12 @@ export function AppHeader({ apiKey, onApiKeyChange }: AppHeaderProps) {
           <DialogHeader>
             <DialogTitle>API 设置</DialogTitle>
             <DialogDescription>
-              请填写你的 Kimi（Moonshot AI）API Key。Key 仅存储在本地浏览器中。
+              请填写你的 Kimi Code API Key。Key 仅存储在本地浏览器中。
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
             <div className="grid gap-2">
-              <Label htmlFor="api-key">Kimi API Key</Label>
+              <Label htmlFor="api-key">Kimi Code API Key</Label>
               <Input
                 id="api-key"
                 type="password"
@@ -57,12 +57,12 @@ export function AppHeader({ apiKey, onApiKeyChange }: AppHeaderProps) {
               <p className="text-xs text-muted-foreground">
                 在{" "}
                 <a
-                  href="https://platform.moonshot.cn/"
+                  href="https://www.kimi.com/code/console"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground"
                 >
-                  Moonshot 开放平台
+                  Kimi Code 控制台
                 </a>{" "}
                 获取 API Key。
               </p>
