@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
           },
         ],
         stream: true,
-        temperature: 0.7,
+        temperature: 1,
       }),
     });
 
