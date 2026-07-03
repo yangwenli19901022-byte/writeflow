@@ -4,13 +4,13 @@
 
 ## 功能特性
 
-- 🤖 接入 Kimi（Moonshot AI）大模型
+- 🤖 接入 DeepSeek 大模型
 - 📝 支持多种体裁：公众号文章、小红书文案、新闻消息
 - 🎨 可调语言调性、字数要求、补充要求
 - ⚡ 流式生成，实时展示输出内容
 - 💾 草稿与生成历史持久化（Supabase / localStorage 降级）
 - 📤 一键复制或导出 Markdown
-- 🔐 用户自行填写 API Key，服务端仅做代理
+- 🔐 用户自行填写 DeepSeek API Key，服务端仅做代理
 
 ## 技术栈
 
@@ -34,7 +34,12 @@
 npm install
 ```
 
-### 3. 配置环境变量
+### 3. 配置 DeepSeek API Key（必填）
+
+1. 访问 [DeepSeek 开放平台](https://platform.deepseek.com/) 注册并创建 API Key。
+2. 打开应用后，在右上角「设置」中填入 DeepSeek API Key。
+
+### 4. 配置环境变量（可选）
 
 ```bash
 cp .env.local.example .env.local
@@ -49,7 +54,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 > Supabase 为可选配置。未配置时将自动降级使用浏览器 localStorage 存储草稿。
 
-### 4. 启动开发服务器
+### 5. 启动开发服务器
 
 ```bash
 npm run dev
@@ -59,7 +64,7 @@ npm run dev
 
 ## 使用说明
 
-1. 在右上角「设置」中填写你的 Kimi API Key。
+1. 在右上角「设置」中填写你的 DeepSeek API Key。
 2. 在左侧创建新任务或选择已有草稿。
 3. 在中间「写作工作台」输入原始素材并选择体裁、调性、字数。
 4. 点击「开始生成」，右侧将实时展示 AI 生成的文案。
