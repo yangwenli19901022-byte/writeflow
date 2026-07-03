@@ -193,7 +193,7 @@ export default function Home() {
           try {
             await createGeneration({
               draft_id: selectedDraftId,
-              model: "kimi-k2.5",
+              model: "deepseek-chat",
               prompt_version: "1.0",
               output: generatedOutput,
             });

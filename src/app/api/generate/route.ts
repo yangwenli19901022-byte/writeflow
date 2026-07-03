@@ -2,8 +2,8 @@ import { NextRequest } from "next/server";
 import { buildPrompt } from "@/lib/prompts";
 import { Genre, Requirements } from "@/types";
 
-const KIMI_API_URL = "https://api.kimi.com/coding/v1/chat/completions";
-const DEFAULT_MODEL = "kimi-k2.5";
+const DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions";
+const DEFAULT_MODEL = "deepseek-chat";
 
 interface ApiErrorResponse {
   error: {
@@ -38,14 +38,14 @@ export async function POST(req: NextRequest) {
 
     if (!apiKey || !apiKey.trim()) {
       return Response.json(
-        { error: "API Key 不能为空，请先在设置中填写" },
+        { error: "API Key 不能为空，请先在设置中填写 DeepSeek API Key" },
         { status: 400 }
       );
     }
 
     const prompt = buildPrompt(genre as Genre, material, requirements);
 
-    const response = await fetch(KIMI_API_URL, {
+    const response = await fetch(DEEPSEEK_API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

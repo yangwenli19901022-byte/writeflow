@@ -29,7 +29,7 @@ export function useGenerate() {
       }
 
       if (!apiKey.trim()) {
-        toast.error("请先填写 Kimi API Key");
+        toast.error("请先填写 DeepSeek API Key");
         return;
       }
 
