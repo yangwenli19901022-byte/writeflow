@@ -44,6 +44,15 @@ export function InputPanel({
     onRequirementsChange({ ...requirements, [key]: value });
   };
 
+  const selectedGenreLabel =
+    GENRE_OPTIONS.find((o) => o.value === genre)?.label || genre;
+  const selectedToneLabel =
+    TONE_OPTIONS.find((o) => o.value === requirements.tone)?.label ||
+    requirements.tone;
+  const selectedWordCountLabel =
+    WORD_COUNT_OPTIONS.find((o) => o.value === requirements.wordCount)?.label ||
+    requirements.wordCount;
+
   return (
     <Card className="flex h-full flex-col rounded-none border-0 shadow-none lg:rounded-lg lg:border lg:shadow-sm">
       <CardHeader className="px-4 py-4 lg:px-6">
@@ -79,7 +88,9 @@ export function InputPanel({
             onValueChange={(value) => onGenreChange(value as Genre)}
           >
             <SelectTrigger id="genre">
-              <SelectValue placeholder="选择体裁" />
+              <SelectValue placeholder="选择体裁">
+                {selectedGenreLabel}
+              </SelectValue>
             </SelectTrigger>
             <SelectContent>
               {GENRE_OPTIONS.map((option) => (
@@ -101,7 +112,9 @@ export function InputPanel({
             onValueChange={(value) => updateRequirement("tone", value as Tone)}
           >
             <SelectTrigger id="tone">
-              <SelectValue placeholder="选择调性" />
+              <SelectValue placeholder="选择调性">
+                {selectedToneLabel}
+              </SelectValue>
             </SelectTrigger>
             <SelectContent>
               {TONE_OPTIONS.map((option) => (
@@ -121,10 +134,14 @@ export function InputPanel({
           <div className="flex gap-2">
             <Select
               value={requirements.wordCount}
-              onValueChange={(value) => value && updateRequirement("wordCount", value)}
+              onValueChange={(value) =>
+                value && updateRequirement("wordCount", value)
+              }
             >
               <SelectTrigger id="word-count" className="flex-1">
-                <SelectValue placeholder="选择字数" />
+                <SelectValue placeholder="选择字数">
+                  {selectedWordCountLabel}
+                </SelectValue>
               </SelectTrigger>
               <SelectContent>
                 {WORD_COUNT_OPTIONS.map((option) => (
