@@ -193,7 +193,7 @@ export default function Home() {
           try {
             await createGeneration({
               draft_id: selectedDraftId,
-              model: "kimi-for-coding",
+              model: "kimi-k2.5",
               prompt_version: "1.0",
               output: generatedOutput,
             });

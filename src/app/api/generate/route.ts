@@ -3,7 +3,7 @@ import { buildPrompt } from "@/lib/prompts";
 import { Genre, Requirements } from "@/types";
 
 const KIMI_API_URL = "https://api.kimi.com/coding/v1/chat/completions";
-const DEFAULT_MODEL = "kimi-for-coding";
+const DEFAULT_MODEL = "kimi-k2.5";
 
 interface ApiErrorResponse {
   error: {
